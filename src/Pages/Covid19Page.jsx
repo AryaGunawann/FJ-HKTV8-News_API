@@ -13,12 +13,14 @@ import defaultImage from "../assets/news.svg";
 import { motion } from "framer-motion";
 import DefaultPageSkeleton from "../Components/Skeleton";
 
+
 const Covid19Page = () => {
   document.title = "Covid19 | News";
   const dispatch = useDispatch();
   const news = useSelector((state) => state.news);
   const loading = useSelector((state) => state.loading);
   const articleBookmarks = useSelector((state) => state.articleBookmarks);
+  const apiUrl = process.env.REACT_APP_COVID19_API;
 
   useEffect(() => {
     const fetchData = async () => {

@@ -19,6 +19,7 @@ const ProgrammingPage = () => {
   const news = useSelector((state) => state.news);
   const loading = useSelector((state) => state.loading);
   const articleBookmarks = useSelector((state) => state.articleBookmarks);
+  const apiUrl = process.env.REACT_APP_PROGRAMMING_API;
 
   useEffect(() => {
     const fetchData = async () => {
