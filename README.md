@@ -1,70 +1,57 @@
-# Getting Started with Create React App
+<div align="center">
+  <a href="">
+    <img src="./public/newspaper.png" alt="Logo" width="300">
+  </a>
+  <h2 style="font-size:30px;" align="center"><strong>NEWS</strong></h2>
+  <p align="center">
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+</div>
 
-## Available Scripts
+## Introduction
+The "News System with News-API Integration" project is a web-based application that combines modern technology to provide users with up-to-date news sources from various categories. In a rapidly changing world, quick and easy access to news is crucial.
 
-In the project directory, you can run:
+<br>
 
-### `npm start`
+## Background:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+In the digital age, news is one of the primary sources of information for many people. However, keeping up with news from various sources and categories can be a challenging task. In this project, we aim to make the news-reading experience more convenient by aggregating primary news sources and providing news from various categories.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+<br/>
 
-### `npm test`
+## Technologies Used:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- Reactjs CRA
+- Tailwind CSS
+- Redux
+- Axios
+- Framer Motion
+- Flowbite
+- React icons
+- React Router
 
-### `npm run build`
+<br/>
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Key Features:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+1. Integrated Homepage: The homepage displays the latest news from various sources and categories.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+2. News Search: Users can search for news based on specific keywords.
 
-### `npm run eject`
+3. Article Storage: Users can save their favorite articles to read later.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+4. Category Pages: Special pages display news from specific categories such as national news, technology, entertainment, and more.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+5. Bookmark Page: Users can access all articles they have saved in one place.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+<br/>
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## Conclusion:
 
-## Learn More
+The "News System with News-API Integration" is an example of how technology can be used to provide users with easy access to the latest news from various categories. The project offers an efficient and convenient news-reading experience and can serve as the foundation for further development in the digital information world.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## **Project Group Members:**
 
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+1. Muhammad Arya Dipanegara Gunawan 
+2. Harfa Sabri Ubaid
+3. Akbar Husaini Nurrahman
