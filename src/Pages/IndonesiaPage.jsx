@@ -20,7 +20,6 @@ const IndonesiaPage = () => {
   const news = useSelector((state) => state.news);
   const loading = useSelector((state) => state.loading);
   const articleBookmarks = useSelector((state) => state.articleBookmarks);
-  const apiUrl = process.env.REACT_APP_INDONESIA_API;
 
   const [category, setCategory] = useState("business");
 
