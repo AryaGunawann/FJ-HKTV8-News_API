@@ -11,7 +11,7 @@ import {
 import NoNewsFound from "../Components/NoNewsFound";
 import defaultImage from "../assets/news.svg";
 import { motion } from "framer-motion";
-import CustomSkeleton from "../Components/Skeleton";
+import DefaultPageSkeleton from "../Components/Skeleton";
 
 const ProgrammingPage = () => {
   document.title = "Programming | News";
@@ -24,7 +24,7 @@ const ProgrammingPage = () => {
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          "https://newsapi.org/v2/everything?q=programming&from=2023-09-18&sortBy=publishedAt&apiKey=0712e4932719454dbed13cdeb16baa93"
+          "https://newsapi.org/v2/everything?q=programming&from=2023-09-30&sortBy=publishedAt&apiKey=0712e4932719454dbed13cdeb16baa93"
         );
         dispatch(setNews(response.data.articles));
         dispatch(setLoading(false));
@@ -60,7 +60,9 @@ const ProgrammingPage = () => {
     >
       <h2 className="text-3xl font-semibold mb-6">Programming</h2>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-        {news.length > 0 ? (
+        {loading ? (
+          <DefaultPageSkeleton itemCount={10} />
+        ) : news.length > 0 ? (
           news.map((article, index) => (
             <motion.div
               key={index}
@@ -76,25 +78,21 @@ const ProgrammingPage = () => {
                 className="group flex flex-col h-full"
               >
                 <div className="relative flex-grow">
-                  {loading ? (
-                    <CustomSkeleton width={210} height={118} />
-                  ) : (
-                    <div className="mb-2 cursor-pointer rounded">
-                      {article.urlToImage ? (
-                        <img
-                          src={article.urlToImage}
-                          alt={article.title}
-                          className="w-full h-36 object-cover"
-                        />
-                      ) : (
-                        <img
-                          src={defaultImage}
-                          alt="Default Image"
-                          className="mx-auto h-40"
-                        />
-                      )}
-                    </div>
-                  )}
+                  <div className="mb-2 cursor-pointer rounded">
+                    {article.urlToImage ? (
+                      <img
+                        src={article.urlToImage}
+                        alt={article.title}
+                        className="w-full h-36 object-cover"
+                      />
+                    ) : (
+                      <img
+                        src={defaultImage}
+                        alt="Default Image"
+                        className="mx-auto h-40"
+                      />
+                    )}
+                  </div>
                   <h3 className="text-lg font-semibold mb-2">
                     {article.title}
                   </h3>

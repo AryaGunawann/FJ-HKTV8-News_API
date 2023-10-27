@@ -12,7 +12,7 @@ import { useParams } from "react-router-dom";
 import { FaBookmark } from "react-icons/fa";
 import CategoryFilter from "../Components/filter/CategoryFilter";
 import { motion } from "framer-motion";
-import CustomSkeleton from "../Components/Skeleton";
+import DefaultPageSkeleton from "../Components/Skeleton";
 import defaultImage from "../assets/news.svg";
 
 const SearchResultsPage = () => {
@@ -69,48 +69,50 @@ const SearchResultsPage = () => {
         <CategoryFilter category={category} setCategory={setCategory} />
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-        {news.length > 0 ? (
+        {loading ? (
+          <DefaultPageSkeleton itemCount={10} />
+        ) : news.length > 0 ? (
           news.map((article, index) => (
             <motion.div
               key={index}
               initial={{ x: -1000, opacity: 0 }}
               animate={{ x: 0, opacity: 1 }}
               transition={{ type: "spring", duration: 1, delay: index * 0.1 }}
-              className="bg-white rounded-lg shadow-md p-4 relative group hover:border-black border"
+              className="bg-white rounded-lg shadow-md p-4 relative group hover:border-black border flex flex-col"
             >
               <a
                 href={article.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group"
+                className="group flex flex-col h-full"
               >
-                <div>
-                  {loading ? (
-                    <CustomSkeleton width={210} height={118} />
-                  ) : article.urlToImage ? (
-                    <img
-                      src={article.urlToImage}
-                      alt={article.title}
-                      className="mb-2 cursor-pointer rounded w-full h-36 object-cover"
-                    />
-                  ) : (
-                    <div className="flex justify-center">
+                <div className="relative flex-grow">
+                  <div className="mb-2 cursor-pointer rounded">
+                    {article.urlToImage ? (
+                      <img
+                        src={article.urlToImage}
+                        alt={article.title}
+                        className="w-full h-36 object-cover"
+                      />
+                    ) : (
                       <img
                         src={defaultImage}
                         alt="Default Image"
                         className="mx-auto h-40"
                       />
-                    </div>
-                  )}
+                    )}
+                  </div>
                   <h3 className="text-lg font-semibold mb-2">
                     {article.title}
                   </h3>
+                  <p className="text-gray-600 flex-grow">
+                    {article.description}
+                  </p>
                 </div>
+                <p className="text-sm text-gray-500 mt-2">
+                  {article.source.name}
+                </p>
               </a>
-              <p className="text-gray-600">{article.description}</p>
-              <p className="text-sm text-gray-500 mt-1">
-                {article.source.name}
-              </p>
               <div className="absolute bottom-2 right-2 hidden group-hover:block">
                 <button
                   className={`${

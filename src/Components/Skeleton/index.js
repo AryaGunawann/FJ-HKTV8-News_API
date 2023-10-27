@@ -1,55 +1,13 @@
-import React, { useState } from "react";
+import React from "react";
 
-const CustomSkeleton = ({ width, height, isLoading }) => {
-  // eslint-disable-next-line no-unused-vars
-  const [loading, setLoading] = useState(isLoading);
-
+const DefaultCardSkeleton = () => {
   return (
-    <div
-      style={{
-        position: "relative",
-        height: "100%",
-        width: "100%",
-      }}
-    >
-      <div
-        style={{
-          position: "absolute",
-          top: 0,
-          left: 0,
-          height: "100%",
-          width: "100%",
-          background: "linear-gradient(to right, #ffffff, #f2f2f2)",
-        }}
-      >
-        <div
-          style={{
-            position: "absolute",
-            top: 0,
-            left: 0,
-            height: "100%",
-            width: "100%",
-            borderRadius: "5px",
-            backgroundColor: "rgba(0, 0, 0, 0.2)",
-          }}
-        />
-      </div>
-
-      {isLoading ? (
-        <div
-          style={{
-            position: "absolute",
-            top: 0,
-            left: 0,
-            height: "100%",
-            width: "100%",
-            borderRadius: "5px",
-            backgroundColor: "rgba(0, 0, 0, 0.7)",
-          }}
-        />
-      ) : null}
+    <div className="bg-white rounded-lg shadow-md p-4 animate-pulse">
+      <div className="w-full h-36 bg-gray-300 rounded mb-2"></div>
+      <div className="h-4 w-4/5 bg-gray-300 rounded mb-2"></div>
+      <div className="h-4 w-3/4 bg-gray-300 rounded"></div>
     </div>
   );
 };
 
-export default CustomSkeleton;
+export default DefaultCardSkeleton;

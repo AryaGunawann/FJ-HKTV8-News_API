@@ -11,7 +11,7 @@ import NoNewsFound from "../Components/NoNewsFound";
 import { FaBookmark } from "react-icons/fa";
 import CategoryFilter from "../Components/filter/CategoryFilter";
 import { motion } from "framer-motion";
-import CustomSkeleton from "../Components/Skeleton";
+import DefaultPageSkeleton from "../Components/Skeleton";
 import defaultImage from "../assets/news.svg";
 
 const IndonesiaPage = () => {
@@ -64,7 +64,9 @@ const IndonesiaPage = () => {
         <CategoryFilter category={category} setCategory={setCategory} />
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-        {news.length > 0 ? (
+        {loading ? (
+          <DefaultPageSkeleton itemCount={10} />
+        ) : news.length > 0 ? (
           news.map((article, index) => (
             <motion.div
               key={index}
@@ -80,25 +82,21 @@ const IndonesiaPage = () => {
                 className="group flex flex-col h-full"
               >
                 <div className="relative flex-grow">
-                  {loading ? (
-                    <CustomSkeleton width={210} height={118} />
-                  ) : (
-                    <div className="mb-2 cursor-pointer rounded">
-                      {article.urlToImage ? (
-                        <img
-                          src={article.urlToImage}
-                          alt={article.title}
-                          className="w-full h-36 object-cover"
-                        />
-                      ) : (
-                        <img
-                          src={defaultImage}
-                          alt="Default Image"
-                          className="mx-auto h-40"
-                        />
-                      )}
-                    </div>
-                  )}
+                  <div className="mb-2 cursor-pointer rounded">
+                    {article.urlToImage ? (
+                      <img
+                        src={article.urlToImage}
+                        alt={article.title}
+                        className="w-full h-36 object-cover"
+                      />
+                    ) : (
+                      <img
+                        src={defaultImage}
+                        alt="Default Image"
+                        className="mx-auto h-40"
+                      />
+                    )}
+                  </div>
                   <h3 className="text-lg font-semibold mb-2">
                     {article.title}
                   </h3>
