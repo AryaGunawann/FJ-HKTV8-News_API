@@ -22,7 +22,6 @@ const SearchResultsPage = () => {
   const news = useSelector((state) => state.news);
   const loading = useSelector((state) => state.loading);
   const articleBookmarks = useSelector((state) => state.articleBookmarks);
-  
 
   const [category, setCategory] = useState("business");
 

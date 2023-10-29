@@ -9,7 +9,6 @@ import SearchResultsPage from "./Pages/SearchResultsPage";
 import { Provider } from "react-redux";
 import store from "./redux/store";
 import Favorites from "./Pages/Favorites";
-import WelcomePage from "./Pages/WelcomePage";
 import ScrollToTopButton from "./Components/ButtonScroll";
 
 function App() {
@@ -19,8 +18,7 @@ function App() {
         <div className="App bg-gray-200">
           <NavBar />
           <Routes>
-            <Route path="/" element={<WelcomePage />} />
-            <Route path="/indonesia" element={<IndonesiaPage />} />
+            <Route path="/" element={<IndonesiaPage />} />
             <Route path="/programming" element={<ProgrammingPage />} />
             <Route path="/covid-19" element={<Covid19Page />} />
             <Route path="/favorites" element={<Favorites />} />

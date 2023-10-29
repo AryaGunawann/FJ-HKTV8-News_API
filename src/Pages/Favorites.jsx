@@ -22,7 +22,7 @@ const Favorites = () => {
   };
 
   return (
-    <div className="container mx-auto p-8 bg-gray-200">
+    <div className="container mx-auto p-8 bg-gray-200 min-h-screen">
       <h2 className="text-3xl font-semibold mb-6">Favorites</h2>
       {articleBookmarks.length > 0 ? (
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">

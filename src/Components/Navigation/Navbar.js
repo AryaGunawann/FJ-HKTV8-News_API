@@ -13,7 +13,6 @@ const Navbar = () => {
   };
 
   const navItems = [
-    { item: "Indonesia", to: "/Indonesia" },
     { item: "Programming", to: "/Programming" },
     { item: "Covid-19", to: "/Covid-19" },
     { item: "Favorites", to: "/Favorites" },

@@ -57,7 +57,7 @@ const ProgrammingPage = () => {
       initial={{ x: -1000, opacity: 0 }}
       animate={{ x: 0, opacity: 1 }}
       transition={{ type: "spring", duration: 1 }}
-      className="container mx-auto p-8 bg-gray-200"
+      className="container mx-auto p-8 bg-gray-200 min-h-screen"
     >
       <h2 className="text-3xl font-semibold mb-6">Programming</h2>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
